@@ -2,8 +2,9 @@
 
 /**
  * main - causes an infinite loop
- * Return: Always 0 (Successful)
+ * Return: 0
  */
+
 int main(void)
 {
 	int i;
@@ -13,7 +14,5 @@ int main(void)
 	i = 0;
 
 	printf("Infinite loop avoided! \\o/\n");
-
 	return (0);
-
 }
