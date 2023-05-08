@@ -1,18 +1,20 @@
 #include "main.h"
 
 /**
- * clear_bit - sets the value of a bit to 0 at given index
- * @n: number to be changed
- * @index: index of bit you want to set
- *
- * Return: 1 else -1
+ * clear_bit - set the opposite of the mask
+ * @num: number to set
+ * @index: position
+ * Return: 1 on success, -1 on fail
  */
-int clear_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *num, unsigned int index)
 {
-	*n = *n & (~(1 << index));
+	unsigned long int mask = 1;
 
-	if (n)
-		return (1);
-	else
+	if (index > (sizeof(unsigned long int) * 8 - 1))
 		return (-1);
+
+	mask <<= index;
+	*num &= ~mask;
+
+	return (1);
 }
